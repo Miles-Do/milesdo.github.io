@@ -1,29 +1,89 @@
-File Style CSS
+    header {
+            grid-area: header;
+            background-color: yellow;
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: gray;
+        }
+
+        main {
+            grid-area: main;
+            background-color: orange;
+        }
+
+        aside {
+            grid-area: aside;
+            background-color: bisque;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: green;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'header header header header header header'
+                'nav nav main main main aside'
+                'nav nav main main main aside'
+                'nav nav footer footer footer footer';
+            grid-gap: .5em;
+            padding: .5em;
+        }
 
 
-p {
-  color: #581845;
-}
+        ul li {
+            list-style-type: none;
+        }
 
 
+        /*FIRST BREAK POINT === tablet */
+        @media only screen and (max-width : 900px) {
+            body {
+                background: blue;
+            }
 
+            .grid-container {
+                display: grid;
+                grid-template-areas:
+                    'nav nav nav nav nav nav'
+                    'header header header header header header'
+                    'main main main main aside aside'
+                    'footer footer footer footer footer footer';
+                grid-gap: .5em;
+                padding: .5em;
+            }
 
-body {
-  width: 90%;
-  max-width: 900px;
-  margin: 0 auto;
-  font: .9em/1.2 Arial, Helvetica, sans-serif;
-    background-color: #FFDBD3;
-}
-h1 {
-  color: #DAF7A6;}
+            ul li {
+                display: inline-block;
+            }
 
-.box {
-  float: left;
-  margin-right: 15px;
-  width: 300px;
-  height: 200px;
-  border-radius: 5px;
-  background-color: rgb(207,232,220);
-  padding: 1em;
-}
+        }
+
+        /*SECOND BREAK POINT === mobile */
+        @media only screen and (max-width : 600px) {
+
+            body {
+                background: fuchsia;
+            }
+
+            .grid-container {
+                display: grid;
+                grid-template-areas:
+                    'nav nav nav nav nav nav'
+                    'header header header header header header'
+                    'main main main main main main'
+                    'aside aside aside aside aside aside'
+                    'footer footer footer footer footer footer';
+                grid-gap: .5em;
+                padding: .5em;
+            }
+
+            ul li {
+                display: inline-block;
+            }
+
+        }
